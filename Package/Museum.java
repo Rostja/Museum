@@ -16,7 +16,15 @@ public class Museum {
         int totalReservedTicketsSenior = 0;
         int totalReservedTicketsStudent = 0;
 
+        for (int day = currentDay; day <= daysOfMonth; day++){
+            int reservedTickets[] = generateReservedTickets();
+            int totalResrevedForDay = reservedTickets[0];
+            int reservedChild = reservedTickets[1];
+            int reservedAdult = reservedTickets[2];
+            int reservedSenior = reservedTickets[3];
+            int reservedSrudent = reservedTickets[4];
 
+        }
 
         public static int[] generateReservedTickets(){
             int Total = generateRandomNumber(0,10);
