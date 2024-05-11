@@ -11,8 +11,13 @@ public class Museum {
         int totalTickets = 0;
         int totalReservedTickets = 0;
 
+        int totalReservedTicketsChild = 0;
+        int totalReservedTicketsAdult = 0;
+        int totalReservedTicketsSenior = 0;
+        int totalReservedTicketsStudent = 0;
+
         for (int day = currentDay; day <= daysOfMonth; day++) {
-            int Reserved = generateRandomNumber(0, 10);
+            int  Reserved = generateRandomNumber(0, 10);
             totalReservedTickets += Reserved;
             totalTickets += 10;
             double percentageOfDay = (((double) Reserved / 10) * 100);
