@@ -18,7 +18,7 @@ public class Museum {
 
         for (int day = currentDay; day <= daysOfMonth; day++){
             int reservedTickets[] = generateReservedTickets();
-            int totalResrevedForDay = reservedTickets[0];
+            int Reserved = reservedTickets[0];
             int reservedChild = reservedTickets[1];
             int reservedAdult = reservedTickets[2];
             int reservedSenior = reservedTickets[3];
@@ -30,6 +30,11 @@ public class Museum {
             totalReservedTicketsSenior += reservedSenior;
             totalReservedTicketsStudent += reservedSrudent;
             totalTickets += 10;
+
+            double percentageOfDay = (((double) Reserved / 10) * 100);
+            System.out.print(day + "/" + currentMonth + " : " + Reserved + " zarezervovanych listkov;  ");
+            System.out.print(" Pocet volnych listkov : " + (10 - Reserved) + "  ");
+            System.out.println(" Percentualne vytazenie na den : " + percentageOfDay + " %");
 
         }
 
@@ -50,15 +55,7 @@ public class Museum {
             return new int []{Total,reservedChild,reservedAdult,reservedSenior,reservedStudent};
         }
 
-        for (int day = currentDay; day <= daysOfMonth; day++) {
-            int  Reserved = generateRandomNumber(0, 10);
-            totalReservedTickets += Reserved;
-            totalTickets += 10;
-            double percentageOfDay = (((double) Reserved / 10) * 100);
-            System.out.print(day + "/" + currentMonth + " : " + Reserved + " zarezervovanych listkov;  ");
-            System.out.print(" Pocet volnych listkov : " + (10 - Reserved) + "  ");
-            System.out.println(" Percentualne vytazenie na den : " + percentageOfDay + " %");
-        }
+
 
         double percentageOfMonth = (((double) totalReservedTickets / totalTickets) * 100);
         System.out.println("Percentualne vytazenie za mesiac : " + percentageOfMonth + " %");
