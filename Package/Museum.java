@@ -24,6 +24,13 @@ public class Museum {
             int reservedSenior = reservedTickets[3];
             int reservedSrudent = reservedTickets[4];
 
+            totalReservedTickets += Reserved;
+            totalReservedTicketsChild += reservedChild;
+            totalReservedTicketsAdult += reservedAdult;
+            totalReservedTicketsSenior += reservedSenior;
+            totalReservedTicketsStudent += reservedSrudent;
+            totalTickets += 10;
+
         }
 
         public static int[] generateReservedTickets(){
