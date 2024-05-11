@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.Random;
 
 public class Museum {
-    public static void main(String[] args) {
+    public static int[] main(String[] args) {
         int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1; // Přičtení 1, protože měsíce jsou indexovány od 0
         int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         int daysOfMonth = Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -16,7 +16,9 @@ public class Museum {
         int totalReservedTicketsSenior = 0;
         int totalReservedTicketsStudent = 0;
 
-        public static int[] generateRaeservedTickets(){
+
+
+        public static int[] generateReservedTickets(){
             int Total = generateRandomNumber(0,10);
 
             int reservedChild = generateRandomNumber(0,Total);
@@ -29,6 +31,8 @@ public class Museum {
             remainingTickets -= reservedSenior;
 
             int  reservedStudent = remainingTickets;
+
+            return new int []{Total,reservedChild,reservedAdult,reservedSenior,reservedStudent};
         }
 
         for (int day = currentDay; day <= daysOfMonth; day++) {
