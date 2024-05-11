@@ -10,14 +10,17 @@ public class Museum {
         int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         int daysOfMonth = Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
 
+
         for (int day = currentDay; day <= daysOfMonth; day++){
             int Reserved = generateRandomNumber(0,10);
+            double percentageOfDay = (((double)Reserved / 10) * 100);
             System.out.print ( day + currentMonth + " : " + Reserved + " zarezervovanych listkov;  " );
             System.out.print(" Pocet volnych listkov : " + (10 - Reserved) + "  " );
-            System.out.println(" Percentualne vytazenie na den : " + (((double)Reserved / 10) * 100) + " %" );
+            System.out.println(" Percentualne vytazenie na den : " + percentageOfDay + " %" );
 
         }
 
+        System.out.println("Percentualne vytazenie na mesiac : ");
 
     }
     public static int generateRandomNumber(int min,int max) {
