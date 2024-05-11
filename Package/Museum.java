@@ -59,6 +59,11 @@ public class Museum {
 
         double percentageOfMonth = (((double) totalReservedTickets / totalTickets) * 100);
         System.out.println("Percentualne vytazenie za mesiac : " + percentageOfMonth + " %");
+        System.out.println("Celkovy pocet rezervovanych listkov: " + totalReservedTickets);
+        System.out.println("   Pre deti: " + totalReservedTicketsChild);
+        System.out.println("   Pre dospelych: " + totalReservedTicketsAdult);
+        System.out.println("   Pre dochodcov: " + totalReservedTicketsSenior);
+        System.out.println("   Pre studentov: " + totalReservedTicketsStudent);
     }
 
     public static int generateRandomNumber(int min, int max) {
