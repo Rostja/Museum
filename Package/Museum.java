@@ -13,7 +13,8 @@ public class Museum {
         for (int day = currentDay; day <= daysOfMonth; day++){
             int Reserved = generateRandomNumber(0,10);
             System.out.print ( day + currentMonth + " : " + Reserved + " zarezervovanych listkov;  " );
-            System.out.println(" Pocet volnych listkov : " + (10 - Reserved) );
+            System.out.print(" Pocet volnych listkov : " + (10 - Reserved) + "  " );
+            System.out.println(" Percentualne vytazenie na den : " + (((double)Reserved / 10) * 100) + " %" );
 
         }
 
