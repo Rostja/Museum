@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.Random;
 
 public class Museum {
-    public static int[] main(String[] args) {
+    public static void main(String[] args) {
         int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1; // Přičtení 1, protože měsíce jsou indexovány od 0
         int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         int daysOfMonth = Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -16,7 +16,7 @@ public class Museum {
         int totalReservedTicketsSenior = 0;
         int totalReservedTicketsStudent = 0;
 
-        for (int day = currentDay; day <= daysOfMonth; day++){
+        for (int day = currentDay; day <= daysOfMonth; day++) {
             int reservedTickets[] = generateReservedTickets();
             int Reserved = reservedTickets[0];
             int reservedChild = reservedTickets[1];
@@ -38,25 +38,6 @@ public class Museum {
 
         }
 
-        public static int[] generateReservedTickets(){
-            int Total = generateRandomNumber(0,10);
-
-            int reservedChild = generateRandomNumber(0,Total);
-            int remainingTickets = Total - reservedChild;
-
-            int reservedAdult = generateRandomNumber(0,remainingTickets);
-            remainingTickets -= reservedAdult;
-
-            int reservedSenior = generateRandomNumber(0,remainingTickets);
-            remainingTickets -= reservedSenior;
-
-            int  reservedStudent = remainingTickets;
-
-            return new int []{Total,reservedChild,reservedAdult,reservedSenior,reservedStudent};
-        }
-
-
-
         double percentageOfMonth = (((double) totalReservedTickets / totalTickets) * 100);
         System.out.println("Percentualne vytazenie za mesiac : " + percentageOfMonth + " %");
         System.out.println("Celkovy pocet rezervovanych listkov: " + totalReservedTickets);
@@ -64,6 +45,24 @@ public class Museum {
         System.out.println("   Pre dospelych: " + totalReservedTicketsAdult);
         System.out.println("   Pre dochodcov: " + totalReservedTicketsSenior);
         System.out.println("   Pre studentov: " + totalReservedTicketsStudent);
+
+    }
+
+    public static int[] generateReservedTickets(){
+        int Total = generateRandomNumber(0,10);
+
+        int reservedChild = generateRandomNumber(0,Total);
+        int remainingTickets = Total - reservedChild;
+
+        int reservedAdult = generateRandomNumber(0,remainingTickets);
+        remainingTickets -= reservedAdult;
+
+        int reservedSenior = generateRandomNumber(0,remainingTickets);
+        remainingTickets -= reservedSenior;
+
+        int  reservedStudent = remainingTickets;
+
+        return new int []{Total,reservedChild,reservedAdult,reservedSenior,reservedStudent};
     }
 
     public static int generateRandomNumber(int min, int max) {
