@@ -1,6 +1,8 @@
 package Package;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 
 public class Museum {
@@ -8,6 +10,9 @@ public class Museum {
         int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1; // Přičtení 1, protože měsíce jsou indexovány od 0
         int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         int daysOfMonth = Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat formatting = new SimpleDateFormat("dd-MM-yyyy");
+
         int totalTickets = 0;
         int totalReservedTickets = 0;
 
@@ -17,6 +22,10 @@ public class Museum {
         int totalReservedTicketsStudent = 0;
 
         for (int day = currentDay; day <= daysOfMonth; day++) {
+            calendar.set(Calendar.DAY_OF_MONTH,day);
+            Date date = calendar.getTime();
+            String formattedDate = formatting.format(date);
+
             int reservedTickets[] = generateReservedTickets();
             int Reserved = reservedTickets[0];
             int reservedChild = reservedTickets[1];
@@ -32,7 +41,7 @@ public class Museum {
             totalTickets += 10;
 
             double percentageOfDay = (((double) Reserved / 10) * 100);
-            System.out.print(day + "/" + currentMonth + " : " + Reserved + " zarezervovanych listkov;  ");
+            System.out.print(formattedDate + " : " + Reserved + " zarezervovanych listkov;  ");
             System.out.print(" Pocet volnych listkov : " + (10 - Reserved) + "  ");
             System.out.println(" Percentualne vytazenie na den : " + percentageOfDay + " %");
 
