@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Museum {
     public static void main(String[] args) {
-        int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1; // Přičtení 1, protože měsíce jsou indexovány od 0
+        int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
         int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
         int daysOfMonth = Calendar.getInstance().getActualMaximum(Calendar.DAY_OF_MONTH);
         Calendar calendar = Calendar.getInstance();
